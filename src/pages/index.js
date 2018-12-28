@@ -67,7 +67,7 @@ class App extends Component {
                 <TabPane tab="任务清单" key="1">
                   <List
                     grid={{
-                      gutter: 16, xs: 1, sm: 1, md: 2, lg: 2, xl: 2
+                      gutter: 40, xs: 1, sm: 1, md: 2, lg: 2, xl: 2
                     }}
                     dataSource={data}
                     renderItem={item => (
@@ -97,7 +97,7 @@ const Container = styled.div`
 
 const ListItem = ({ title, content }) => (
   <React.Fragment>
-    <Row type="flex" align="middle" style={{ margin: 20, padding: '20px 0', height: 140, borderBottom: 'solid 1px #70707032' }}>
+    <Row type="flex" align="middle" style={{ margin: '20px 0', padding: '20px 0', height: 140, borderBottom: 'solid 1px #70707032' }}>
       <img src={mumAndBaby} alt="" style={{ height: 100, width: 70, marginRight: 20 }} />
       <Col style={{ flex: 1 }}>
         <Row type="flex" justify="space-between" style={{ marginBottom: 10 }}>
@@ -107,7 +107,7 @@ const ListItem = ({ title, content }) => (
           <Rect width={22} color="#d8d8d8" />
         </Row>
         <Row type="flex" align="bottom" justify="space-between">
-          <Col span={20}>
+          <Col span={18}>
             <PingFangSC size={19} weight={500} color='#7d7d7d'>
               <ResponsiveEllipsis
                 text={content}
@@ -115,8 +115,8 @@ const ListItem = ({ title, content }) => (
               />
             </PingFangSC>
           </Col>
-          <Col span={4}>
-            <OpenBtn radius={18} height={35} >
+          <Col span={6} align="right">
+            <OpenBtn>
               <PingFangSC size={20} weight={700} color='#fff'>
                 打卡
               </PingFangSC>

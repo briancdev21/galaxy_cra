@@ -5,6 +5,7 @@ const OpenBtn = styled.div`
   height: 35px;
   border-radius: 18px;
   padding: 3px 10px;
+  width: 70px;
   text-align: center;
   cursor: pointer;
 `;
