@@ -1,0 +1,28 @@
+.card {
+  width: 100%;
+  display: inline-block;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 0 20px -8px;
+}
+
+.ant-tabs-tab, .ant-tabs-tab:hover {
+  font-size: 22px;
+  padding: 8px 3px !important;
+  font-weight: 700;
+}
+
+.ant-tabs-nav .ant-tabs-tab-active, .ant-tabs-nav .ant-tabs-tab-active:hover {
+  border-bottom: solid 4px #47e4c2;
+  color: #47e4c2;
+  font-size: 22px;
+  padding: 8px 3px !important;
+  font-weight: 700;
+}
+
+.ant-tabs-ink-bar {
+  background-color: #47e4c2;
+}
+
+.ant-tabs-bar {
+  border-bottom: none;
+}
