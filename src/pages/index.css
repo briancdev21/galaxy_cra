@@ -1,8 +1,9 @@
 .card {
   width: 100%;
   display: inline-block;
-  border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 0 20px -8px;
+  border-radius: 10px;
+  margin: 15px 0;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 0 20px -2px;
 }
 
 .ant-tabs-tab, .ant-tabs-tab:hover {
@@ -25,4 +26,21 @@
 
 .ant-tabs-bar {
   border-bottom: none;
+}
+
+.icon-list {
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+}
+
+.pv-md {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.sidebar-card {
+  float: right;
+  margin-right: -290px;
+  width: 270px;
 }
