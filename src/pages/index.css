@@ -43,4 +43,11 @@
   float: right;
   margin-right: -290px;
   width: 270px;
+  display: none;
+}
+
+@media (min-width: 2150px) {
+  .sidebar-card {
+    display: block;
+  }
 }

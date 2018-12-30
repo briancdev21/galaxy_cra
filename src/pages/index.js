@@ -104,7 +104,7 @@ class App extends Component {
                 <TabPane tab="任务清单" key="1">
                   <List
                     grid={{
-                      gutter: 40, xs: 1, sm: 1, md: 2, lg: 2, xl: 2
+                      gutter: 40, xs: 1, sm: 1, md: 1, lg: 2, xl: 2
                     }}
                     dataSource={data}
                     renderItem={item => (
@@ -220,6 +220,10 @@ const Container = styled.div`
   width: 100%;
   max-width: 1378px;
   margin: auto;
+
+  @media (max-width: 1378px) {
+    padding: 15px;
+  }
 `;
 
 const ListItem = ({ title, content }) => (
