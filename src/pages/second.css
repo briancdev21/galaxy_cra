@@ -1,0 +1,53 @@
+.card {
+  width: 100%;
+  display: inline-block;
+  border-radius: 10px;
+  margin: 15px 0;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 0 20px -2px;
+}
+
+.ant-tabs-tab, .ant-tabs-tab:hover {
+  font-size: 22px;
+  padding: 8px 3px !important;
+  font-weight: 700;
+}
+
+.ant-tabs-nav .ant-tabs-tab-active, .ant-tabs-nav .ant-tabs-tab-active:hover {
+  border-bottom: solid 4px #47e4c2;
+  color: #47e4c2;
+  font-size: 22px;
+  padding: 8px 3px !important;
+  font-weight: 700;
+}
+
+.ant-tabs-ink-bar {
+  background-color: #47e4c2;
+}
+
+.ant-tabs-bar {
+  border-bottom: none;
+}
+
+.icon-list {
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+}
+
+.pv-md {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.sidebar-card {
+  float: right;
+  margin-right: -290px;
+  width: 270px;
+  display: none;
+}
+
+@media (min-width: 2150px) {
+  .sidebar-card {
+    display: block;
+  }
+}
