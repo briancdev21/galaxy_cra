@@ -54,4 +54,9 @@ const MenuIconWrapper = styled.div`
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+
+  &:hover { 
+    background-color: #b1b1b1;
+  }
 `;
