@@ -36,3 +36,8 @@ code {
     monospace;
 }
 
+@media (max-width: 560px) {
+  .ant-card-body {
+    padding: 20px 10px;
+  }
+}
