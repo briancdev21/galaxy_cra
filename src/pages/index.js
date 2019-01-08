@@ -218,10 +218,10 @@ export default App;
 
 const Container = styled.div`
   width: 100%;
-  max-width: 1378px;
+  max-width: 1260px;
   margin: auto;
 
-  @media (max-width: 1378px) {
+  @media (max-width: 1260px) {
     padding: 15px;
   }
 `;

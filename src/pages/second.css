@@ -46,8 +46,44 @@
   display: none;
 }
 
-@media (min-width: 2150px) {
+.listitem-container {
+  padding: 15px;
+  box-shadow: 0 5px 4px -4px rgba(0, 0, 0, 0.1);
+}
+
+.listitem-image {
+  height: 100px;
+  width: 70px;
+  margin-right: 20px;
+}
+
+@media (min-width: 1880px) {
   .sidebar-card {
     display: block;
+  }
+}
+
+@media (max-width: 560px) {
+  .ant-tabs-tab, .ant-tabs-tab:hover {
+    font-size: 18px;
+  }
+  
+  .ant-tabs-nav .ant-tabs-tab-active, .ant-tabs-nav .ant-tabs-tab-active:hover {
+    font-size: 18px;
+  }
+  .card {
+    margin: 10px 0;
+  }
+
+  .listitem-container {
+    padding: 5px;
+    height: auto;
+    align-items: flex-start;
+  }
+
+  .listitem-image {
+    height: 70px;
+    width: 50px;
+    margin-right: 15px;
   }
 }

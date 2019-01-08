@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Card, Row, Col, List } from 'antd';
+import { Card, Row, Col, List, Tabs } from 'antd';
 import LinesEllipsis from 'react-lines-ellipsis'
 import responsiveHOC from 'react-lines-ellipsis/lib/responsiveHOC';
 import * as moment from 'moment';
@@ -87,6 +87,7 @@ const data2 = [
   }
 ];
 const ResponsiveEllipsis = responsiveHOC()(LinesEllipsis);
+const TabPane = Tabs.TabPane;
 
 class Second extends Component {
   render() {
@@ -94,6 +95,12 @@ class Second extends Component {
       <React.Fragment>
         <Header />
         <Container>
+          <Tabs defaultActiveKey="1" style={{ marginBottom: '-1.5em' }} tabBarStyle={{ color: '#cdcdcd', fontFamily: 'PingFangSC', fontWeight: 700, fontSize: '1em' }}>
+            <TabPane tab="目标任务" key="1">
+            </TabPane>
+            <TabPane tab="联络簿" key="2">
+            </TabPane>
+          </Tabs>
           <Card className="sidebar-card card">
               <Row type="flex" justify="space-between">
                 <Col>
@@ -126,10 +133,10 @@ class Second extends Component {
             <Card
               className="card"
             >
-              <Row type="flex" justify="space-between" style={{  marginBottom: 40 }}>
+              <Row type="flex" justify="space-between" style={{  marginBottom: '2em' }}>
                 <Col>
                   <Row type="flex" align="middle">
-                    <PingFangSC size={22} color="#4a4a4a" weight={700}>任务清单</PingFangSC>
+                    <PingFangSC size={22} color="#4a4a4a" mobileSize={20} weight={700}>任务清单</PingFangSC>
                   </Row>
                 </Col>
               </Row>
@@ -151,7 +158,7 @@ class Second extends Component {
             <Card
               className="card"
             >
-              <Row type="flex" justify="space-between"  style={{  marginBottom: 40 }}> 
+              <Row type="flex" justify="space-between"  style={{  marginBottom: '2em' }}> 
                 <Col>
                   <Row type="flex" align="middle">
                     <PingFangSC size={22} color="#4a4a4a" weight={700}>目标进度</PingFangSC>
@@ -191,18 +198,22 @@ export default Second;
 
 const Container = styled.div`
   width: 100%;
-  max-width: 1378px;
+  max-width: 1260px;
   margin: auto;
+  padding: 20px 15px;
 
-  @media (max-width: 1378px) {
+  @media (max-width: 1260px) {
     padding: 15px;
+  }
+  @media (max-width: 560px) {
+    padding: 10px;
   }
 `;
 
 const ListItem = ({ title, content }) => (
   <React.Fragment>
-    <Row type="flex" align="middle" style={{ height: 140, padding: 15, boxShadow: '0 5px 4px -4px rgba(0, 0, 0, 0.1)' }}>
-      <img src={mumAndBaby} alt="" style={{ height: 100, width: 70, marginRight: 20 }} />
+    <Row type="flex" align="middle" className="listitem-container">
+      <img src={mumAndBaby} alt="" className="listitem-image" style={{  }} />
       <Col style={{ flex: 1 }}>
         <Row type="flex" justify="space-between" style={{ marginBottom: 10 }}>
           <PingFangSC size={20} weight={500} color='#000'>
@@ -220,7 +231,7 @@ const ListItem = ({ title, content }) => (
             </PingFangSC>
           </Col>
           <Col span={6} align="right">
-            <OpenBtn start="#63e2b7" end="#9cf3dc" style={{ padding: '3px 15px' }}>
+            <OpenBtn start="#63e2b7" end="#9cf3dc" style={{ padding: '3px 8px' }}>
               <PingFangSC size={20} weight={700} color='#fff'>
                 打卡
               </PingFangSC>
@@ -235,30 +246,27 @@ const ListItem = ({ title, content }) => (
 
 const ListItem2 = ({ data }) => (
   <React.Fragment>
-    <Row type="flex" align="middle" style={{ height: 140, padding: 15, boxShadow: '0 5px 4px -4px rgba(0, 0, 0, 0.1)' }}>
+    <Row type="flex" align="middle" className="listitem-container">
       <Col style={{ flex: 1 }}>
         <Row type="flex" justify="space-between" style={{ marginBottom: 10 }}>
           <PingFangSC size={20} weight={500} color='#000'>
             {data.title}
           </PingFangSC>
         </Row>
-        <Row type="flex" align="bottom" justify="space-between">
+        <Row type="flex" align="bottom" justify="space-between" style={{ marginBottom: 5 }}>
           <PingFangSC size={19} weight={500} color='#7d7d7d'>
-            <ResponsiveEllipsis
-              text={data.content}
-              maxLine='1'
-            />
+            {data.content}
           </PingFangSC>
         </Row>
         <Row type="flex" align="bottom" justify="space-between">
           <Col>
-            <PingFangSC size={19} weight={500} color='#7d7d7d'>
-              当前进度&nbsp;
+            <PingFangSC size={17} weight={500} color='#7d7d7d'>
+              当前进度
             </PingFangSC>
             <PingFangSC size={18} weight={900} color='#58d1d0'>
               &nbsp;{data.progress}/{data.total}&nbsp;
             </PingFangSC>
-            <PingFangSC size={19} weight={500} color='#7d7d7d'>
+            <PingFangSC size={17} weight={500} color='#7d7d7d'>
               个词汇 · 最终指标
             </PingFangSC>
             <PingFangSC size={18} weight={900} color='#58d1d0'>

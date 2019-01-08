@@ -14,9 +14,9 @@ const Header = () => (
           <Row type="flex" justify="space-between" align="middle">
             <img src={logo} width={50} alt="" />
             &nbsp;&nbsp;
-            <PingFangSC size={24} weight={700} color="#4a4a4a">启儿宝</PingFangSC>
+            <PingFangSC size={24} mobileSize={22} weight={700} color="#4a4a4a">启儿宝</PingFangSC>
             &nbsp;&nbsp;
-            <PingFangSC size={20} weight={700} color="#04b4d4">家庭工作坊</PingFangSC>
+            <PingFangSC size={20} mobileSize={18} weight={700} color="#04b4d4">家庭工作坊</PingFangSC>
           </Row>
         </Col>
         <Col className="icons-list">
