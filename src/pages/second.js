@@ -39,27 +39,51 @@ const data = [
 const data2 = [
   {
     title: '语言表达 - 语句 - 功能性词条',
-    content: '这里是详细解释这里是详细解释这里是详细解释这里是详细解释这里是详 当前进度 6/10 个词汇 · 最终指标 8/10',
+    content: '这里是详细解释这里是详细解释这里是详细解释这里是详细解释这里是详',
+    progress: 6,
+    total: 10,
+    finalDisplay: 8,
+    process: 60,
   },
   {
     title: '语言表达 - 语句 - 功能性词条',
-    content: '这里是详细解释这里是详细解释这里是详细解释这里是详细解释这里是详 当前进度 6/10 个词汇 · 最终指标 8/10',
+    content: '这里是详细解释这里是详细解释这里是详细解释这里是详细解释这里是详',
+    progress: 6,
+    total: 10,
+    finalDisplay: 8,
+    process: 60,
   },
   {
     title: '语言表达 - 语句 - 功能性词条',
-    content: '这里是详细解释这里是详细解释这里是详细解释这里是详细解释这里是详 当前进度 6/10 个词汇 · 最终指标 8/10',
+    content: '这里是详细解释这里是详细解释这里是详细解释这里是详细解释这里是详',
+    progress: 1,
+    total: 5,
+    finalDisplay: 5,
+    process: 25,
   },
   {
     title: '语言表达 - 语句 - 功能性词条',
-    content: '这里是详细解释这里是详细解释这里是详细解释这里是详细解释这里是详 当前进度 6/10 个词汇 · 最终指标 8/10',
+    content: '这里是详细解释这里是详细解释这里是详细解释这里是详细解释这里是详',
+    progress: 1,
+    total: 5,
+    finalDisplay: 5,
+    process: 25,
   },
   {
     title: '语言表达 - 语句 - 功能性词条',
-    content: '这里是详细解释这里是详细解释这里是详细解释这里是详细解释这里是详 当前进度 6/10 个词汇 · 最终指标 8/10',
+    content: '这里是详细解释这里是详细解释这里是详细解释这里是详细解释这里是详',
+    progress: 4,
+    total: 8,
+    finalDisplay: 8,
+    process: 20,
   },
   {
     title: '语言表达 - 语句 - 功能性词条',
-    content: '这里是详细解释这里是详细解释这里是详细解释这里是详细解释这里是详 当前进度 6/10 个词汇 · 最终指标 8/10',
+    content: '这里是详细解释这里是详细解释这里是详细解释这里是详细解释这里是详',
+    progress: 4,
+    total: 8,
+    finalDisplay: 8,
+    process: 20,
   }
 ];
 const ResponsiveEllipsis = responsiveHOC()(LinesEllipsis);
@@ -117,7 +141,7 @@ class Second extends Component {
                   dataSource={data}
                   renderItem={item => (
                     <List.Item>
-                      <ListItem title={item.title} content={item.content} />
+                      <ListItem title={item.title} content={item.content}  />
                     </List.Item>
                   )}
                 />
@@ -149,7 +173,7 @@ class Second extends Component {
                   dataSource={data2}
                   renderItem={item => (
                     <List.Item>
-                      <ListItem2 title={item.title} content={item.content} />
+                      <ListItem2 data={item} />
                     </List.Item>
                   )}
                 />
@@ -209,19 +233,19 @@ const ListItem = ({ title, content }) => (
 );
 
 
-const ListItem2 = ({ title, content }) => (
+const ListItem2 = ({ data }) => (
   <React.Fragment>
     <Row type="flex" align="middle" style={{ height: 140, padding: 15, boxShadow: '0 5px 4px -4px rgba(0, 0, 0, 0.1)' }}>
       <Col style={{ flex: 1 }}>
         <Row type="flex" justify="space-between" style={{ marginBottom: 10 }}>
           <PingFangSC size={20} weight={500} color='#000'>
-            {title}
+            {data.title}
           </PingFangSC>
         </Row>
         <Row type="flex" align="bottom" justify="space-between">
           <PingFangSC size={19} weight={500} color='#7d7d7d'>
             <ResponsiveEllipsis
-              text={content}
+              text={data.content}
               maxLine='1'
             />
           </PingFangSC>
@@ -232,17 +256,17 @@ const ListItem2 = ({ title, content }) => (
               当前进度&nbsp;
             </PingFangSC>
             <PingFangSC size={18} weight={900} color='#58d1d0'>
-              &nbsp;6/10&nbsp;
+              &nbsp;{data.progress}/{data.total}&nbsp;
             </PingFangSC>
             <PingFangSC size={19} weight={500} color='#7d7d7d'>
               个词汇 · 最终指标
             </PingFangSC>
             <PingFangSC size={18} weight={900} color='#58d1d0'>
-              &nbsp;8/10&nbsp;
+              &nbsp;{data.finalDisplay}/{data.total}&nbsp;
             </PingFangSC>
           </Col>
           <Col>
-            <Progress percent={50} />
+            <Progress percent={data.process} />
           </Col>
         </Row>
       </Col>
