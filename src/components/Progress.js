@@ -31,7 +31,7 @@ const ForeBar = styled.div`
 `;
 
 const BackBar = styled.div`
-  width: 180px;
+  width: 160px;
   height: 15px;
   border-radius: 8px;
   background-color: #efefef;

@@ -10,6 +10,10 @@ const OpenBtn = styled.div`
   align-items: center;
   justify-content: center;
   cursor: pointer;
+
+  @media (max-width: 560px) {
+    min-width: 60px;
+  }
 `;
 
 export default OpenBtn;
