@@ -228,7 +228,7 @@ const Container = styled.div`
 
 const ListItem = ({ title, content }) => (
   <React.Fragment>
-    <Row type="flex" align="middle" style={{ height: 140, borderBottom: 'solid 1px #70707032' }}>
+    <Row type="flex" align="middle" style={{ height: 140, padding: 15, boxShadow: '0 5px 4px -4px rgba(0, 0, 0, 0.1)' }}>
       <img src={mumAndBaby} alt="" style={{ height: 100, width: 70, marginRight: 20 }} />
       <Col style={{ flex: 1 }}>
         <Row type="flex" justify="space-between" style={{ marginBottom: 10 }}>

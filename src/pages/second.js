@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Card, Row, Col, Tabs, List } from 'antd';
+import { Card, Row, Col, List } from 'antd';
 import LinesEllipsis from 'react-lines-ellipsis'
 import responsiveHOC from 'react-lines-ellipsis/lib/responsiveHOC';
 import * as moment from 'moment';
 
-import { Header, Rect, PingFangSC, OpenBtn } from '../components';
+import { Header, Rect, PingFangSC, OpenBtn, Progress } from '../components';
 import './second.css';
 import mumAndBaby from '../assets/images/mumAndBaby.png';
 
@@ -70,93 +70,93 @@ class Second extends Component {
       <React.Fragment>
         <Header />
         <Container>
-        <Card className="sidebar-card card">
-            <Row type="flex" justify="space-between">
-              <Col>
-                <Row type="flex" align="middle">
-                  <PingFangSC size={22} color="#4a4a4a" weight={700}>下次咨询</PingFangSC>
-                </Row>
-              </Col>
-            </Row>
-            <div style={{ margin: '20px 0' }}>
-              <PingFangSC size={19} weight={700} color='#7d7d7d'>
-                {moment(new Date()).format('HH:MM, YYYY年MM月DD日')}
-              </PingFangSC>
-            </div>
-            <div style={{ margin: '20px 0', textAlign: 'center' }}>
-              <OpenBtn start="#ff6d93" end="#ffa5bc" style={{ boxShadow: '#ff6d93 0 0 12px 0', width: 150 }}>
-                <Rect width={25} color="#fff" />&nbsp;
-                <PingFangSC size={20} weight={700} color='#fff'>
-                  视频咨询
+          <Card className="sidebar-card card">
+              <Row type="flex" justify="space-between">
+                <Col>
+                  <Row type="flex" align="middle">
+                    <PingFangSC size={22} color="#4a4a4a" weight={700}>下次咨询</PingFangSC>
+                  </Row>
+                </Col>
+              </Row>
+              <div style={{ margin: '20px 0' }}>
+                <PingFangSC size={19} weight={700} color='#7d7d7d'>
+                  {moment(new Date()).format('HH:MM, YYYY年MM月DD日')}
                 </PingFangSC>
-              </OpenBtn>    
-            </div>
-            <div style={{ margin: '20px 0', textAlign: 'center' }}>
-              <OpenBtn start="#ff6d93" end="#ffa5bc" style={{ boxShadow: '#ff6d93 0 0 12px 0', width: 150 }}>
-                <PingFangSC size={20} weight={700} color='#fff'>
-                  加购咨询
-                </PingFangSC>
-              </OpenBtn>    
-            </div>
-          </Card>
-          <Card
-            className="card"
-          >
-            <Row type="flex" justify="space-between">
-              <Col>
-                <Row type="flex" align="middle">
-                  <PingFangSC size={22} color="#4a4a4a" weight={700}>任务清单</PingFangSC>
-                </Row>
-              </Col>
-            </Row>
-            <Row>
-              <List
-                grid={{
-                  gutter: 40, xs: 1, sm: 1, md: 1, lg: 2, xl: 2
-                }}
-                dataSource={data}
-                renderItem={item => (
-                  <List.Item>
-                    <ListItem title={item.title} content={item.content} />
-                  </List.Item>
-                )}
-              />
-            </Row>
-          </Card>
-          {/* Second Card */}
-          <Card
-            className="card"
-          >
-            <Row type="flex" justify="space-between">
-              <Col>
-                <Row type="flex" align="middle">
-                  <PingFangSC size={22} color="#4a4a4a" weight={700}>目标进度</PingFangSC>
-                </Row>
-              </Col>
-              <Col>
-                <Row type="flex" align="middle">
-                  <PingFangSC size={19} color="#47e4c2" weight={500}>查看更多</PingFangSC>
-                  &nbsp;
-                  <Rect width={22} color="#47e4c2" />
-                </Row>
-              </Col>
-            </Row>
-            <Row>
-              <List
-                grid={{
-                  gutter: 40, xs: 1, sm: 1, md: 1, lg: 2, xl: 2
-                }}
-                dataSource={data2}
-                renderItem={item => (
-                  <List.Item>
-                    <ListItem2 title={item.title} content={item.content} />
-                  </List.Item>
-                )}
-              />
-            </Row>
-          </Card>
-          {/* Side card */}
-          
+              </div>
+              <div style={{ margin: '20px 0', textAlign: 'center' }}>
+                <OpenBtn start="#ff6d93" end="#ffa5bc" style={{ boxShadow: '#ff6d93 0 0 12px 0', width: 150 }}>
+                  <Rect width={25} color="#fff" />&nbsp;
+                  <PingFangSC size={20} weight={700} color='#fff'>
+                    视频咨询
+                  </PingFangSC>
+                </OpenBtn>    
+              </div>
+              <div style={{ margin: '20px 0', textAlign: 'center' }}>
+                <OpenBtn start="#ff6d93" end="#ffa5bc" style={{ boxShadow: '#ff6d93 0 0 12px 0', width: 150 }}>
+                  <PingFangSC size={20} weight={700} color='#fff'>
+                    加购咨询
+                  </PingFangSC>
+                </OpenBtn>    
+              </div>
+            </Card>
+            <Card
+              className="card"
+            >
+              <Row type="flex" justify="space-between" style={{  marginBottom: 40 }}>
+                <Col>
+                  <Row type="flex" align="middle">
+                    <PingFangSC size={22} color="#4a4a4a" weight={700}>任务清单</PingFangSC>
+                  </Row>
+                </Col>
+              </Row>
+              <Row>
+                <List
+                  grid={{
+                    gutter: 40, xs: 1, sm: 1, md: 1, lg: 2, xl: 2
+                  }}
+                  dataSource={data}
+                  renderItem={item => (
+                    <List.Item>
+                      <ListItem title={item.title} content={item.content} />
+                    </List.Item>
+                  )}
+                />
+              </Row>
+            </Card>
+            {/* Second Card */}
+            <Card
+              className="card"
+            >
+              <Row type="flex" justify="space-between"  style={{  marginBottom: 40 }}> 
+                <Col>
+                  <Row type="flex" align="middle">
+                    <PingFangSC size={22} color="#4a4a4a" weight={700}>目标进度</PingFangSC>
+                  </Row>
+                </Col>
+                <Col>
+                  <Row type="flex" align="middle">
+                    <PingFangSC size={19} color="#47e4c2" weight={500}>查看更多</PingFangSC>
+                    &nbsp;
+                    <Rect width={22} color="#47e4c2" />
+                  </Row>
+                </Col>
+              </Row>
+              <Row>
+                <List
+                  grid={{
+                    gutter: 40, xs: 1, sm: 1, md: 1, lg: 2, xl: 2
+                  }}
+                  dataSource={data2}
+                  renderItem={item => (
+                    <List.Item>
+                      <ListItem2 title={item.title} content={item.content} />
+                    </List.Item>
+                  )}
+                />
+              </Row>
+            </Card>
+            {/* Side card */}
+            
         </Container>
       </React.Fragment>
     );
@@ -177,7 +177,7 @@ const Container = styled.div`
 
 const ListItem = ({ title, content }) => (
   <React.Fragment>
-    <Row type="flex" align="middle" style={{ height: 140, borderBottom: 'solid 1px #70707032' }}>
+    <Row type="flex" align="middle" style={{ height: 140, padding: 15, boxShadow: '0 5px 4px -4px rgba(0, 0, 0, 0.1)' }}>
       <img src={mumAndBaby} alt="" style={{ height: 100, width: 70, marginRight: 20 }} />
       <Col style={{ flex: 1 }}>
         <Row type="flex" justify="space-between" style={{ marginBottom: 10 }}>
@@ -211,30 +211,39 @@ const ListItem = ({ title, content }) => (
 
 const ListItem2 = ({ title, content }) => (
   <React.Fragment>
-    <Row type="flex" align="middle" style={{ height: 140, borderBottom: 'solid 1px #70707032' }}>
+    <Row type="flex" align="middle" style={{ height: 140, padding: 15, boxShadow: '0 5px 4px -4px rgba(0, 0, 0, 0.1)' }}>
       <Col style={{ flex: 1 }}>
         <Row type="flex" justify="space-between" style={{ marginBottom: 10 }}>
           <PingFangSC size={20} weight={500} color='#000'>
             {title}
           </PingFangSC>
-          <Rect width={22} color="#d8d8d8" />
         </Row>
         <Row type="flex" align="bottom" justify="space-between">
-          <Col span={18}>
+          <PingFangSC size={19} weight={500} color='#7d7d7d'>
+            <ResponsiveEllipsis
+              text={content}
+              maxLine='1'
+            />
+          </PingFangSC>
+        </Row>
+        <Row type="flex" align="bottom" justify="space-between">
+          <Col>
             <PingFangSC size={19} weight={500} color='#7d7d7d'>
-              <ResponsiveEllipsis
-                text={content}
-                maxLine='2'
-              />
+              当前进度&nbsp;
+            </PingFangSC>
+            <PingFangSC size={18} weight={900} color='#58d1d0'>
+              &nbsp;6/10&nbsp;
+            </PingFangSC>
+            <PingFangSC size={19} weight={500} color='#7d7d7d'>
+              个词汇 · 最终指标
+            </PingFangSC>
+            <PingFangSC size={18} weight={900} color='#58d1d0'>
+              &nbsp;8/10&nbsp;
             </PingFangSC>
           </Col>
-          <Col span={6} align="right">
-            <OpenBtn start="#63e2b7" end="#9cf3dc" style={{ padding: '3px 15px' }}>
-              <PingFangSC size={20} weight={700} color='#fff'>
-                打卡
-              </PingFangSC>
-            </OpenBtn>     
-          </Col>     
+          <Col>
+            <Progress percent={50} />
+          </Col>
         </Row>
       </Col>
     </Row>
