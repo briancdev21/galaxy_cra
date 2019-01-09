@@ -54,4 +54,12 @@ const Container = styled.div`
   &.active .title {
     color: #fff;
   }
+
+  @media (max-width: 800px) {
+    margin: 10px;
+  }
+
+  @media (max-width: 560px) {
+    margin: 10px;
+  }
 `;

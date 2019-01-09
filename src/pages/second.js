@@ -213,7 +213,7 @@ const Container = styled.div`
 const ListItem = ({ title, content }) => (
   <React.Fragment>
     <Row type="flex" align="middle" className="listitem-container">
-      <img src={mumAndBaby} alt="" className="listitem-image" style={{  }} />
+      <img src={mumAndBaby} alt="" className="listitem-image" />
       <Col style={{ flex: 1 }}>
         <Row type="flex" justify="space-between" style={{ marginBottom: 10 }}>
           <PingFangSC size={20} weight={500} color='#000'>

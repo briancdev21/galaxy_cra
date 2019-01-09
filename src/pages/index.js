@@ -83,12 +83,12 @@ class App extends Component {
           <Card
             className="card"
           >
-            <Row type="flex" justify="space-between">
+            <Row type="flex" justify="space-between" >
               <Col>
                 <Row type="flex" align="middle">
                   <Rect width={30} color="#4a4a4a" />
                   &nbsp;&nbsp;
-                  <PingFangSC size={22} color="#4a4a4a" weight={700}>目标任务</PingFangSC>
+                  <PingFangSC size={22}  mobileSize={20} color="#4a4a4a" weight={700}>目标任务</PingFangSC>
                 </Row>
               </Col>
               <Col>
@@ -148,20 +148,23 @@ class App extends Component {
                 <TabPane tab="Homework" key="1">
                   <p>Homework text for that client</p>
                   <div className="pv-md">
-                    <div className="icon-list">
-                      <MenuIconWrapper>
-                        <Icon type="link" style={{ color: '#8590a6', fontSize: '2em' }} />
-                      </MenuIconWrapper>
-                      <MenuIconWrapper>
-                        <Icon type="picture" theme="filled" style={{ color: '#8590a6', fontSize: '1.8em' }} />
-                      </MenuIconWrapper>
-                      <MenuIconWrapper>
-                        <img src={videopng} style={{ width: 40, height: 32 }} alt="" />
-                      </MenuIconWrapper>
-                      &nbsp;&nbsp;&nbsp;
-                      <RoundRectBtn title="心得" active />
-                      <RoundRectBtn title="提问" />
-                      <RoundRectBtn title="作业" />
+                    <div className="index-icon-list">
+                      <Row type="flex"  style={{ marginRight: 20 }}>
+                        <MenuIconWrapper>
+                          <Icon type="link" style={{ color: '#8590a6', fontSize: '2em' }} />
+                        </MenuIconWrapper>
+                        <MenuIconWrapper>
+                          <Icon type="picture" theme="filled" style={{ color: '#8590a6', fontSize: '1.8em' }} />
+                        </MenuIconWrapper>
+                        <MenuIconWrapper>
+                          <img src={videopng} alt="" />
+                        </MenuIconWrapper>
+                      </Row>
+                      <Row>
+                        <RoundRectBtn title="心得" active />
+                        <RoundRectBtn title="提问" />
+                        <RoundRectBtn title="作业" />
+                      </Row>
                     </div>
                   </div>
                   <div className="pv-md">
@@ -228,8 +231,8 @@ const Container = styled.div`
 
 const ListItem = ({ title, content }) => (
   <React.Fragment>
-    <Row type="flex" align="middle" style={{ height: 140, padding: 15, boxShadow: '0 5px 4px -4px rgba(0, 0, 0, 0.1)' }}>
-      <img src={mumAndBaby} alt="" style={{ height: 100, width: 70, marginRight: 20 }} />
+    <Row type="flex" align="middle" className="listitem-container">
+      <img src={mumAndBaby} alt=""  className="listitem-image" />
       <Col style={{ flex: 1 }}>
         <Row type="flex" justify="space-between" style={{ marginBottom: 10 }}>
           <PingFangSC size={20} weight={500} color='#000'>
@@ -263,8 +266,18 @@ const MenuIconWrapper = styled.div`
   width: 20px;
   height: 30px;
   margin: 0 15px;
+  font-size: 16px;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  img {
+    height: 22px;
+  }
+  @media (max-width: 460px) {
+    font-size: 12px;
+    img {
+      height: 18px;
+    }
+  }
 `;
