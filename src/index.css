@@ -36,6 +36,11 @@ code {
     monospace;
 }
 
+.video-react .video-react-big-play-button {
+  top: calc(50% - 0.75em);
+  left: calc(50% - 0.75em);
+}
+
 @media (max-width: 560px) {
   .ant-card-body {
     padding: 20px 10px;
