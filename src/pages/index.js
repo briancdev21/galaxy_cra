@@ -134,7 +134,7 @@ class App extends Component {
           <Card
             className="card"
           >
-            <Row type="flex" justify="flex-start">
+            <Row type="flex" justify="start">
               <Col>
                 <Row type="flex" align="middle">
                   <Rect width={30} color="#4a4a4a" />
