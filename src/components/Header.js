@@ -92,7 +92,7 @@ const MenuWrapper = styled.div`
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.01);
   display: ${props => props.hidden ? 'none': 'block'};
   z-index: 999;
 `;
